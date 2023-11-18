@@ -9,7 +9,7 @@
     <style>
         #animation-container {
             position: relative;
-            height: 400px; /* Ajusta la altura según tus necesidades */
+            height: 450px; /* Ajusta la altura según tus necesidades */
             width: 300px; /* Ajusta el tamaño según tus necesidades */
             overflow: hidden;
         }
@@ -20,10 +20,10 @@
             top: 0;
             left: 0;
             opacity: 0;
-            transition: opacity 1s ease; /* Añade transición para suavizar la aparición */
+            transition: opacity 0.5s ease-in-out; /* Transición menos pronunciada */
         }
         .bunsen-img {
-            top: 150px; /* Ajusta la posición vertical según tus necesidades */
+            top: 200px; /* Ajusta la posición vertical según tus necesidades */
         }
     </style>
 </head>
@@ -72,7 +72,7 @@
 
                 currentStep++;
 
-                setTimeout(animate, 1000); // Intervalo de 1 segundo entre pasos
+                setTimeout(animate, 800); // Intervalo de 0.8 segundos entre pasos
             }
         }
 
