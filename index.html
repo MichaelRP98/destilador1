@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Vertido de Agua</title>
+    <!-- Incluye jQuery (puedes cambiar la URL a la versión que prefieras) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #animation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Simulación de Vertido de Agua</h1>
+<button onclick="startAnimation()">Iniciar Proceso 1</button>
+<div id="animation-container"></div>
+
+<script>
+    function startAnimation() {
+        var container = $("#animation-container");
+        container.html(""); // Limpiar el contenedor antes de iniciar la animación
+
+        var steps = [
+            "image1.png",
+            "image2.png",
+            "image3.png",
+            "image4.png"
+        ];
+
+        var currentStep = 0;
+
+        function animate() {
+            if (currentStep < steps.length) {
+                var img = $("<img>").attr("src", steps[currentStep]);
+                container.append(img);
+
+                currentStep++;
+
+                setTimeout(animate, 1000); // Intervalo de 1 segundo entre pasos
+            }
+        }
+
+        animate();
+    }
+</script>
+
+</body>
+</html>
