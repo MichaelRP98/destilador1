@@ -22,6 +22,9 @@
             opacity: 0;
             transition: opacity 1s ease; /* Añade transición para suavizar la aparición */
         }
+        .bunsen-img {
+            top: 150px; /* Ajusta la posición vertical según tus necesidades */
+        }
     </style>
 </head>
 <body>
@@ -46,10 +49,10 @@
             "image5.png",
             "mechero.png",
             "mechero1.png"
-        ]);
+        ], true);
     }
 
-    function startAnimation(steps) {
+    function startAnimation(steps, bunsenMode) {
         var container = $("#animation-container");
         container.html(""); // Limpiar el contenedor antes de iniciar la animación
 
@@ -62,6 +65,10 @@
 
                 // Ajusta la opacidad para suavizar la aparición de cada imagen
                 img.css("opacity", 1);
+
+                if (bunsenMode && currentStep > 0) {
+                    img.addClass("bunsen-img");
+                }
 
                 currentStep++;
 
