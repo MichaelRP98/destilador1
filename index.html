@@ -27,20 +27,32 @@
 <body>
 
 <h1>Simulación de Vertido de Agua</h1>
-<button onclick="startAnimation()">Iniciar Proceso 1</button>
+<button onclick="startWaterAnimation()">Iniciar Proceso 1</button>
+<button onclick="startBunsenBurnerAnimation()">Encender Mechero</button>
 <div id="animation-container"></div>
 
 <script>
-    function startAnimation() {
-        var container = $("#animation-container");
-        container.html(""); // Limpiar el contenedor antes de iniciar la animación
-
-        var steps = [
+    function startWaterAnimation() {
+        startAnimation([
             "image1.png",
             "image2.png",
             "image3.png",
             "image4.png"
-        ];
+        ]);
+    }
+
+    function startBunsenBurnerAnimation() {
+        startAnimation([
+            "bunsen1.png",
+            "bunsen2.png",
+            "bunsen3.png",
+            "bunsen4.png"
+        ]);
+    }
+
+    function startAnimation(steps) {
+        var container = $("#animation-container");
+        container.html(""); // Limpiar el contenedor antes de iniciar la animación
 
         var currentStep = 0;
 
@@ -64,3 +76,4 @@
 
 </body>
 </html>
+
